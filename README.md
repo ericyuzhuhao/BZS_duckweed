@@ -1,2 +1,2 @@
 # BZS_duckweed
-“This is a line from RStudio”
+Contains datasets and statistical analyses of an experiment investigating the role of salinity, genotypic variation, microbial communities, and algae on the elimination of benzotriazole by duckweed Lemna minor
