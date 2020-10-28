@@ -442,5 +442,612 @@ od600i_model_km.temp2 <- MCMCglmm(scale(log(od600))~Salt, random = ~ Genotype , 
 
 
 
+#linear model for percent decrease in benzotriazole concentration, both location descriptors
+bzs_model_both <- MCMCglmm(scale(BZT_percent_d)~Salt + Microbes + density + km +
+                             Salt:Microbes + Salt:density + Salt:km +
+                             Microbes:density + Microbes:km +
+                             density:km +
+                             Salt:Microbes:density + Salt:Microbes:km + Salt:density:km +
+                             Microbes:density:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+bzs_model_both.temp1 <- MCMCglmm(scale(BZT_percent_d)~Salt + Microbes + density + km +
+                             Salt:Microbes + Salt:density + Salt:km +
+                             Microbes:density + Microbes:km +
+                             density:km +
+                             Salt:Microbes:density + Salt:Microbes:km + 
+                             Microbes:density:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+bzs_model_both.temp2 <- MCMCglmm(scale(BZT_percent_d)~Salt + Microbes + density + km +
+                                   Salt:Microbes + Salt:density + Salt:km +
+                                   Microbes:density + Microbes:km +
+                                   density:km +
+                                   Salt:Microbes:density + Salt:Microbes:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+bzs_model_both.temp3 <- MCMCglmm(scale(BZT_percent_d)~Salt + Microbes + density + km +
+                                   Salt:Microbes + Salt:density + Salt:km +
+                                   Microbes:density + Microbes:km +
+                                   density:km +
+                                   Salt:Microbes:density, random = ~ Genotype , data=bzs2,verbose=F)
+
+bzs_model_both.temp4 <- MCMCglmm(scale(BZT_percent_d)~Salt + Microbes + density + km +
+                                   Salt:Microbes + Salt:density + Salt:km +
+                                   Microbes:density + Microbes:km +
+                                   density:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+bzs_model_both.temp5 <- MCMCglmm(scale(BZT_percent_d)~Salt + Microbes + density + km +
+                                   Salt:Microbes + Salt:density + 
+                                   Microbes:density + Microbes:km +
+                                   density:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+bzs_model_both.temp6 <- MCMCglmm(scale(BZT_percent_d)~Salt + Microbes + density + km +
+                                   Salt:Microbes + 
+                                   Microbes:density + Microbes:km +
+                                   density:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+bzs_model_both.temp7 <- MCMCglmm(scale(BZT_percent_d)~Salt + Microbes + density + km +
+                                   Salt:Microbes + 
+                                   Microbes:density + Microbes:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+bzs_model_both.temp8 <- MCMCglmm(scale(BZT_percent_d)~Salt + Microbes + density + km +
+                                   Salt:Microbes + Microbes:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+bzs_model_both.temp9 <- MCMCglmm(scale(BZT_percent_d)~Salt + Microbes + density + km +
+                                   Salt:Microbes, random = ~ Genotype , data=bzs2,verbose=F)
+
+bzs_model_both.temp10 <- MCMCglmm(scale(BZT_percent_d)~Salt + Microbes + density + 
+                                   Salt:Microbes, random = ~ Genotype , data=bzs2,verbose=F)
+
+bzs_model_both.temp11 <- MCMCglmm(scale(BZT_percent_d)~Salt + Microbes + density, random = ~ Genotype , data=bzs2,verbose=F)
+
+bzs_model_both.temp12 <- MCMCglmm(scale(BZT_percent_d)~Salt + density, random = ~ Genotype , data=bzs2,verbose=F)
+
+bzs_model_both.temp13 <- MCMCglmm(scale(BZT_percent_d)~Salt, random = ~ Genotype , data=bzs2,verbose=F)
+
+#linear model for amount of benzotriazole alanine, both location descriptors
+BZTalanine_model_both <- MCMCglmm(scale(BZTalanine)~Salt + Microbes + density + km +
+                                    Salt:Microbes + Salt:density + Salt:km +
+                                    Microbes:density + Microbes:km +
+                                    density:km +
+                                    Salt:Microbes:density + Salt:Microbes:km + Salt:density:km +
+                                    Microbes:density:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+BZTalanine_model_both.temp1 <- MCMCglmm(scale(BZTalanine)~Salt + Microbes + density + km +
+                                    Salt:Microbes + Salt:density + Salt:km +
+                                    Microbes:density + Microbes:km +
+                                    density:km +
+                                    Salt:Microbes:density + Salt:Microbes:km +
+                                    Microbes:density:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+BZTalanine_model_both.temp2 <- MCMCglmm(scale(BZTalanine)~Salt + Microbes + density + km +
+                                          Salt:Microbes + Salt:density + Salt:km +
+                                          Microbes:density + Microbes:km +
+                                          density:km +
+                                          Salt:Microbes:density + 
+                                          Microbes:density:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+BZTalanine_model_both.temp3 <- MCMCglmm(scale(BZTalanine)~Salt + Microbes + density + km +
+                                          Salt:Microbes + Salt:density + Salt:km +
+                                          Microbes:density + Microbes:km +
+                                          density:km +
+                                          Microbes:density:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+BZTalanine_model_both.temp4 <- MCMCglmm(scale(BZTalanine)~Salt + Microbes + density + km +
+                                          Salt:density + Salt:km +
+                                          Microbes:density + Microbes:km +
+                                          density:km +
+                                          Microbes:density:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+BZTalanine_model_both.temp5 <- MCMCglmm(scale(BZTalanine)~Salt + Microbes + density + km +
+                                          Salt:km +
+                                          Microbes:density + Microbes:km +
+                                          density:km +
+                                          Microbes:density:km, random = ~ Genotype , data=bzs2,verbose=F)
+BZTalanine_model_both.temp6 <- MCMCglmm(scale(BZTalanine)~Salt + Microbes + density + km +
+                                          Salt:km +
+                                          Microbes:density + Microbes:km +
+                                          density:km +
+                                          Microbes:density:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+#linear model for amount of glycosylated benzotriazole, both location descriptors
+glycosylatedBZT_model_both <- MCMCglmm(scale(glycosylatedBZT)~Salt + Microbes + density + km +
+                                       Salt:Microbes + Salt:density + Salt:km +
+                                       Microbes:density + Microbes:km +
+                                       density:km +
+                                       Salt:Microbes:density + Salt:Microbes:km + Salt:density:km +
+                                       Microbes:density:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+glycosylatedBZT_model_both.temp1 <- MCMCglmm(scale(glycosylatedBZT)~Salt + Microbes + density + km +
+                                         Salt:Microbes + Salt:density + Salt:km +
+                                         Microbes:density + Microbes:km +
+                                         density:km +
+                                         Salt:Microbes:density + Salt:density:km +
+                                         Microbes:density:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+glycosylatedBZT_model_both.temp2 <- MCMCglmm(scale(glycosylatedBZT)~Salt + Microbes + density + km +
+                                               Salt:Microbes + Salt:density + Salt:km +
+                                               Microbes:density + Microbes:km +
+                                               density:km +
+                                               Salt:Microbes:density + Salt:density:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+glycosylatedBZT_model_both.temp3 <- MCMCglmm(scale(glycosylatedBZT)~Salt + Microbes + density + km +
+                                               Salt:Microbes + Salt:density + Salt:km +
+                                               Microbes:density + Microbes:km +
+                                               density:km +
+                                               Salt:density:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+glycosylatedBZT_model_both.temp4 <- MCMCglmm(scale(glycosylatedBZT)~Salt + Microbes + density + km +
+                                               Salt:Microbes + Salt:density + Salt:km +
+                                               Microbes:density + Microbes:km +
+                                               density:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+glycosylatedBZT_model_both.temp5 <- MCMCglmm(scale(glycosylatedBZT)~Salt + Microbes + density + km +
+                                               Salt:Microbes + Salt:km +
+                                               Microbes:density + Microbes:km +
+                                               density:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+glycosylatedBZT_model_both.temp6 <- MCMCglmm(scale(glycosylatedBZT)~Salt + Microbes + density + km +
+                                               Salt:Microbes + Salt:km +
+                                               Microbes:density + Microbes:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+glycosylatedBZT_model_both.temp7 <- MCMCglmm(scale(glycosylatedBZT)~Salt + Microbes + density + km +
+                                               Salt:Microbes + Salt:km + Microbes:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+glycosylatedBZT_model_both.temp8 <- MCMCglmm(scale(glycosylatedBZT)~Salt + Microbes + density + km +
+                                               Salt:Microbes + Salt:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+glycosylatedBZT_model_both.temp9 <- MCMCglmm(scale(glycosylatedBZT)~Salt + Microbes + density + km +
+                                               Salt:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+glycosylatedBZT_model_both.temp10 <- MCMCglmm(scale(glycosylatedBZT)~Salt + Microbes + density + km, random = ~ Genotype , data=bzs2,verbose=F)
+
+glycosylatedBZT_model_both.temp11 <- MCMCglmm(scale(glycosylatedBZT)~Salt + Microbes + km, random = ~ Genotype , data=bzs2,verbose=F)
+
+glycosylatedBZT_model_both.temp12 <- MCMCglmm(scale(glycosylatedBZT)~Salt + km, random = ~ Genotype , data=bzs2,verbose=F)
+
+glycosylatedBZT_model_both.temp13 <- MCMCglmm(scale(glycosylatedBZT)~km, random = ~ Genotype , data=bzs2,verbose=F)
+
+#linear model for amount of benzotriazole acetyl-alanine, both location descriptors
+BZTacetylalanine_model_both <- MCMCglmm(scale(BZTacetylalanine)~Salt + Microbes + density + km +
+                                          Salt:Microbes + Salt:density + Salt:km +
+                                          Microbes:density + Microbes:km +
+                                          density:km +
+                                          Salt:Microbes:density + Salt:Microbes:km + Salt:density:km +
+                                          Microbes:density:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+BZTacetylalanine_model_both.temp1 <- MCMCglmm(scale(BZTacetylalanine)~Salt + Microbes + density + km +
+                                          Salt:Microbes + Salt:density + Salt:km +
+                                          Microbes:density + Microbes:km +
+                                          density:km +
+                                          Salt:Microbes:density + Salt:density:km +
+                                          Microbes:density:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+BZTacetylalanine_model_both.temp2 <- MCMCglmm(scale(BZTacetylalanine)~Salt + Microbes + density + km +
+                                                Salt:Microbes + Salt:density + Salt:km +
+                                                Microbes:density + Microbes:km +
+                                                density:km +
+                                                Salt:Microbes:density + 
+                                                Microbes:density:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+BZTacetylalanine_model_both.temp3 <- MCMCglmm(scale(BZTacetylalanine)~Salt + Microbes + density + km +
+                                                Salt:Microbes + Salt:density + Salt:km +
+                                                Microbes:density + Microbes:km +
+                                                density:km +
+                                                Salt:Microbes:density, random = ~ Genotype , data=bzs2,verbose=F)
+
+BZTacetylalanine_model_both.temp4 <- MCMCglmm(scale(BZTacetylalanine)~Salt + Microbes + density + km +
+                                                Salt:Microbes + Salt:density + Salt:km +
+                                                Microbes:density + 
+                                                density:km +
+                                                Salt:Microbes:density, random = ~ Genotype , data=bzs2,verbose=F)
+
+BZTacetylalanine_model_both.temp5 <- MCMCglmm(scale(BZTacetylalanine)~Salt + Microbes + density + km +
+                                                Salt:Microbes + Salt:density + Salt:km +
+                                                Microbes:density + 
+                                                Salt:Microbes:density, random = ~ Genotype , data=bzs2,verbose=F)
+
+BZTacetylalanine_model_both.temp6 <- MCMCglmm(scale(BZTacetylalanine)~Salt + Microbes + density + km +
+                                                Salt:Microbes + Salt:density + 
+                                                Microbes:density + 
+                                                Salt:Microbes:density, random = ~ Genotype , data=bzs2,verbose=F)
+
+#linear model for amount of aniline, both location descriptors
+aniline_model_both <- MCMCglmm(scale(aniline)~Salt + Microbes + density + km +
+                                 Salt:Microbes + Salt:density + Salt:km +
+                                 Microbes:density + Microbes:km +
+                                 density:km +
+                                 Salt:Microbes:density + Salt:Microbes:km + Salt:density:km +
+                                 Microbes:density:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+aniline_model_both.temp1 <- MCMCglmm(scale(aniline)~Salt + Microbes + density + km +
+                                 Salt:Microbes + Salt:density + Salt:km +
+                                 Microbes:density + Microbes:km +
+                                 density:km +
+                                 Salt:Microbes:km + Salt:density:km +
+                                 Microbes:density:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+aniline_model_both.temp2 <- MCMCglmm(scale(aniline)~Salt + Microbes + density + km +
+                                       Salt:Microbes + Salt:density + Salt:km +
+                                       Microbes:density + Microbes:km +
+                                       density:km +
+                                       Salt:Microbes:km + Salt:density:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+aniline_model_both.temp3 <- MCMCglmm(scale(aniline)~Salt + Microbes + density + km +
+                                       Salt:Microbes + Salt:density + Salt:km +
+                                       Microbes:density + Microbes:km +
+                                       density:km +
+                                       Salt:Microbes:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+aniline_model_both.temp4 <- MCMCglmm(scale(aniline)~Salt + Microbes + density + km +
+                                       Salt:Microbes + Salt:density + Salt:km +
+                                       Microbes:density + Microbes:km +
+                                       density:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+aniline_model_both.temp5 <- MCMCglmm(scale(aniline)~Salt + Microbes + density + km +
+                                       Salt:Microbes + Salt:density + Salt:km +
+                                       Microbes:density + Microbes:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+aniline_model_both.temp6 <- MCMCglmm(scale(aniline)~Salt + Microbes + density + km +
+                                       Salt:density + Salt:km +
+                                       Microbes:density + Microbes:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+aniline_model_both.temp7 <- MCMCglmm(scale(aniline)~Salt + Microbes + density + km +
+                                       Salt:km +
+                                       Microbes:density + Microbes:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+aniline_model_both.temp8 <- MCMCglmm(scale(aniline)~Salt + Microbes + density + km +
+                                       Microbes:density + Microbes:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+aniline_model_both.temp9 <- MCMCglmm(scale(aniline)~Salt + Microbes + density + km +
+                                       Microbes:density, random = ~ Genotype , data=bzs2,verbose=F)
+
+aniline_model_both.temp10 <- MCMCglmm(scale(aniline)~Salt + Microbes + density + km, random = ~ Genotype , data=bzs2,verbose=F)
+
+aniline_model_both.temp11 <- MCMCglmm(scale(aniline)~Salt + Microbes + km, random = ~ Genotype , data=bzs2,verbose=F)
+
+aniline_model_both.temp12 <- MCMCglmm(scale(aniline)~Salt + Microbes, random = ~ Genotype , data=bzs2,verbose=F)
+
+aniline_model_both.temp13 <- MCMCglmm(scale(aniline)~Salt, random = ~ Genotype , data=bzs2,verbose=F)
+
+#linear model for amount of amino_3_phenol, both location descriptors
+amino_3_phenol_model_both <- MCMCglmm(scale(amino_3_phenol)~Salt + Microbes + density + km +
+                                        Salt:Microbes + Salt:density + Salt:km +
+                                        Microbes:density + Microbes:km +
+                                        density:km +
+                                        Salt:Microbes:density + Salt:Microbes:km + Salt:density:km +
+                                        Microbes:density:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+amino_3_phenol_model_both.temp1 <- MCMCglmm(scale(amino_3_phenol)~Salt + Microbes + density + km +
+                                        Salt:Microbes + Salt:density + Salt:km +
+                                        Microbes:density + Microbes:km +
+                                        density:km +
+                                        Salt:Microbes:density + Salt:Microbes:km + 
+                                        Microbes:density:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+amino_3_phenol_model_both.temp2 <- MCMCglmm(scale(amino_3_phenol)~Salt + Microbes + density + km +
+                                              Salt:Microbes + Salt:density + Salt:km +
+                                              Microbes:density + Microbes:km +
+                                              density:km +
+                                              Salt:Microbes:density + Salt:Microbes:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+amino_3_phenol_model_both.temp3 <- MCMCglmm(scale(amino_3_phenol)~Salt + Microbes + density + km +
+                                              Salt:Microbes + Salt:density + Salt:km +
+                                              Microbes:density + Microbes:km +
+                                              Salt:Microbes:density + Salt:Microbes:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+#linear model for amount of phenazine, both location descriptors
+phenazine_model_both <- MCMCglmm(scale(phenazine)~Salt + Microbes + density + km +
+                                   Salt:Microbes + Salt:density + Salt:km +
+                                   Microbes:density + Microbes:km +
+                                   density:km +
+                                   Salt:Microbes:density + Salt:Microbes:km + Salt:density:km +
+                                   Microbes:density:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+phenazine_model_both.temp1 <- MCMCglmm(scale(phenazine)~Salt + Microbes + density + km +
+                                   Salt:Microbes + Salt:density + Salt:km +
+                                   Microbes:density + Microbes:km +
+                                   density:km +
+                                   Salt:Microbes:density + Salt:density:km +
+                                   Microbes:density:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+phenazine_model_both.temp2 <- MCMCglmm(scale(phenazine)~Salt + Microbes + density + km +
+                                         Salt:Microbes + Salt:density + Salt:km +
+                                         Microbes:density + Microbes:km +
+                                         density:km +
+                                         Salt:density:km +
+                                         Microbes:density:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+phenazine_model_both.temp3 <- MCMCglmm(scale(phenazine)~Salt + Microbes + density + km +
+                                         Salt:Microbes + Salt:density + Salt:km +
+                                         Microbes:density + Microbes:km +
+                                         density:km +
+                                         Salt:density:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+phenazine_model_both.temp4 <- MCMCglmm(scale(phenazine)~Salt + Microbes + density + km +
+                                         Salt:density + Salt:km +
+                                         Microbes:density + Microbes:km +
+                                         density:km +
+                                         Salt:density:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+phenazine_model_both.temp5 <- MCMCglmm(scale(phenazine)~Salt + Microbes + density + km +
+                                         Salt:density + Salt:km +
+                                         Microbes:density +
+                                         density:km +
+                                         Salt:density:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+phenazine_model_both.temp6 <- MCMCglmm(scale(phenazine)~Salt + Microbes + density + km +
+                                         Salt:density + Salt:km +
+                                         density:km +
+                                         Salt:density:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+phenazine_model_both.temp7 <- MCMCglmm(scale(phenazine)~Salt + density + km +
+                                         Salt:density + Salt:km +
+                                         density:km +
+                                         Salt:density:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+phenazine_model_both.temp8 <- MCMCglmm(scale(phenazine)~Salt + density + km +
+                                         Salt:density + Salt:km +
+                                         density:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+phenazine_model_both.temp9 <- MCMCglmm(scale(phenazine)~Salt + density + km +
+                                         Salt:density + Salt:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+phenazine_model_both.temp10 <- MCMCglmm(scale(phenazine)~Salt + density + km + Salt:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+phenazine_model_both.temp11 <- MCMCglmm(scale(phenazine)~Salt + density + km, random = ~ Genotype , data=bzs2,verbose=F)
+
+phenazine_model_both.temp12 <- MCMCglmm(scale(phenazine)~density + km, random = ~ Genotype , data=bzs2,verbose=F)
+
+phenazine_model_both.temp13 <- MCMCglmm(scale(phenazine)~density, random = ~ Genotype , data=bzs2,verbose=F)
 
 
+#linear model for amount of methylbenzotriazole, both location descriptors
+methylBZT_model_both <- MCMCglmm(scale(methylBZT)~Salt + Microbes + density + km +
+                                   Salt:Microbes + Salt:density + Salt:km +
+                                   Microbes:density + Microbes:km +
+                                   density:km +
+                                   Salt:Microbes:density + Salt:Microbes:km + Salt:density:km +
+                                   Microbes:density:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+methylBZT_model_both.temp1 <- MCMCglmm(scale(methylBZT)~Salt + Microbes + density + km +
+                                   Salt:Microbes + Salt:density + Salt:km +
+                                   Microbes:density + Microbes:km +
+                                   density:km +
+                                   Salt:Microbes:density + Salt:Microbes:km + 
+                                   Microbes:density:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+methylBZT_model_both.temp2 <- MCMCglmm(scale(methylBZT)~Salt + Microbes + density + km +
+                                         Salt:Microbes + Salt:density + Salt:km +
+                                         Microbes:density + Microbes:km +
+                                         density:km +
+                                         Salt:Microbes:density + Salt:Microbes:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+methylBZT_model_both.temp3 <- MCMCglmm(scale(methylBZT)~Salt + Microbes + density + km +
+                                         Salt:Microbes + Salt:density + Salt:km +
+                                         Microbes:density + Microbes:km +
+                                         Salt:Microbes:density + Salt:Microbes:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+methylBZT_model_both.temp4 <- MCMCglmm(scale(methylBZT)~Salt + Microbes + density + km +
+                                         Salt:Microbes + Salt:density + Salt:km +
+                                         Microbes:density + Microbes:km +
+                                         Salt:Microbes:density, random = ~ Genotype , data=bzs2,verbose=F)
+
+methylBZT_model_both.temp5 <- MCMCglmm(scale(methylBZT)~Salt + Microbes + density + km +
+                                         Salt:Microbes + Salt:density + Salt:km +
+                                         Microbes:density + Microbes:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+methylBZT_model_both.temp6 <- MCMCglmm(scale(methylBZT)~Salt + Microbes + density + km +
+                                         Salt:density + Salt:km +
+                                         Microbes:density + Microbes:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+methylBZT_model_both.temp7 <- MCMCglmm(scale(methylBZT)~Salt + Microbes + density + km +
+                                         Salt:density + Salt:km +
+                                         Microbes:density, random = ~ Genotype , data=bzs2,verbose=F)
+
+methylBZT_model_both.temp8 <- MCMCglmm(scale(methylBZT)~Salt + Microbes + density + km +
+                                         Salt:km +
+                                         Microbes:density, random = ~ Genotype , data=bzs2,verbose=F)
+
+methylBZT_model_both.temp9 <- MCMCglmm(scale(methylBZT)~Salt + Microbes + density + km +
+                                         Microbes:density, random = ~ Genotype , data=bzs2,verbose=F)
+
+methylBZT_model_both.temp10 <- MCMCglmm(scale(methylBZT)~Salt + Microbes + density + km, random = ~ Genotype , data=bzs2,verbose=F)
+
+methylBZT_model_both.temp11 <- MCMCglmm(scale(methylBZT)~Salt + Microbes + km, random = ~ Genotype , data=bzs2,verbose=F)
+
+methylBZT_model_both.temp12 <- MCMCglmm(scale(methylBZT)~Microbes + km, random = ~ Genotype , data=bzs2,verbose=F)
+
+methylBZT_model_both.temp13 <- MCMCglmm(scale(methylBZT)~Microbes, random = ~ Genotype , data=bzs2,verbose=F)
+
+
+#linear model for amount of methoxybenzotriazole, both location descriptors
+methoxyBZT_model_both <- MCMCglmm(scale(methoxyBZT)~Salt + Microbes + density + km +
+                                    Salt:Microbes + Salt:density + Salt:km +
+                                    Microbes:density + Microbes:km +
+                                    density:km +
+                                    Salt:Microbes:density + Salt:Microbes:km + Salt:density:km +
+                                    Microbes:density:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+methoxyBZT_model_both.temp1 <- MCMCglmm(scale(methoxyBZT)~Salt + Microbes + density + km +
+                                    Salt:Microbes + Salt:density + Salt:km +
+                                    Microbes:density + Microbes:km +
+                                    density:km +
+                                    Salt:Microbes:density + Salt:density:km +
+                                    Microbes:density:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+methoxyBZT_model_both.temp2 <- MCMCglmm(scale(methoxyBZT)~Salt + Microbes + density + km +
+                                          Salt:Microbes + Salt:density + Salt:km +
+                                          Microbes:density + Microbes:km +
+                                          density:km +
+                                          Salt:Microbes:density + 
+                                          Microbes:density:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+methoxyBZT_model_both.temp3 <- MCMCglmm(scale(methoxyBZT)~Salt + Microbes + density + km +
+                                          Salt:Microbes + Salt:density + Salt:km +
+                                          Microbes:density + Microbes:km +
+                                          density:km +
+                                          Salt:Microbes:density, random = ~ Genotype , data=bzs2,verbose=F)
+
+
+methoxyBZT_model_both.temp4 <- MCMCglmm(scale(methoxyBZT)~Salt + Microbes + density + km +
+                                          Salt:Microbes + Salt:density + Salt:km +
+                                          Microbes:density + Microbes:km +
+                                          density:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+methoxyBZT_model_both.temp5 <- MCMCglmm(scale(methoxyBZT)~Salt + Microbes + density + km +
+                                          Salt:Microbes + Salt:km +
+                                          Microbes:density + Microbes:km +
+                                          density:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+methoxyBZT_model_both.temp6 <- MCMCglmm(scale(methoxyBZT)~Salt + Microbes + density + km +
+                                          Salt:Microbes + 
+                                          Microbes:density + Microbes:km +
+                                          density:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+methoxyBZT_model_both.temp7 <- MCMCglmm(scale(methoxyBZT)~Salt + Microbes + density + km +
+                                          Salt:Microbes + 
+                                          Microbes:density + 
+                                          density:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+methoxyBZT_model_both.temp8 <- MCMCglmm(scale(methoxyBZT)~Salt + Microbes + density + km +
+                                          Salt:Microbes + 
+                                          Microbes:density, random = ~ Genotype , data=bzs2,verbose=F)
+
+methoxyBZT_model_both.temp9 <- MCMCglmm(scale(methoxyBZT)~Salt + Microbes + density + km +
+                                          Microbes:density, random = ~ Genotype , data=bzs2,verbose=F)
+
+methoxyBZT_model_both.temp10 <- MCMCglmm(scale(methoxyBZT)~Salt + Microbes + density + km, random = ~ Genotype , data=bzs2,verbose=F)
+
+methoxyBZT_model_both.temp11 <- MCMCglmm(scale(methoxyBZT)~Salt + Microbes + km, random = ~ Genotype , data=bzs2,verbose=F)
+
+methoxyBZT_model_both.temp12 <- MCMCglmm(scale(methoxyBZT)~Salt + km, random = ~ Genotype , data=bzs2,verbose=F)
+
+#linear model for frond number on day 10, both location descriptors
+X10FN_model_both <- MCMCglmm(scale(X10.FN)~Salt + Microbes + density + km +
+                               Salt:Microbes + Salt:density + Salt:km +
+                               Microbes:density + Microbes:km +
+                               density:km +
+                               Salt:Microbes:density + Salt:Microbes:km + Salt:density:km +
+                               Microbes:density:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+X10FN_model_both.temp1 <- MCMCglmm(scale(X10.FN)~Salt + Microbes + density + km +
+                               Salt:Microbes + Salt:density + Salt:km +
+                               Microbes:density + Microbes:km +
+                               density:km +
+                               Salt:Microbes:density + Salt:density:km +
+                               Microbes:density:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+X10FN_model_both.temp2 <- MCMCglmm(scale(X10.FN)~Salt + Microbes + density + km +
+                                     Salt:Microbes + Salt:density + Salt:km +
+                                     Microbes:density + Microbes:km +
+                                     density:km +
+                                     Salt:Microbes:density + 
+                                     Microbes:density:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+X10FN_model_both.temp3 <- MCMCglmm(scale(X10.FN)~Salt + Microbes + density + km +
+                                     Salt:Microbes + Salt:density + Salt:km +
+                                     Microbes:density + Microbes:km +
+                                     density:km +
+                                     Microbes:density:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+X10FN_model_both.temp4 <- MCMCglmm(scale(X10.FN)~Salt + Microbes + density + km +
+                                     Salt:Microbes + Salt:density + 
+                                     Microbes:density + Microbes:km +
+                                     density:km +
+                                     Microbes:density:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+X10FN_model_both.temp5 <- MCMCglmm(scale(X10.FN)~Salt + Microbes + density + km +
+                                     Salt:Microbes +
+                                     Microbes:density + Microbes:km +
+                                     density:km +
+                                     Microbes:density:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+X10FN_model_both.temp6 <- MCMCglmm(scale(X10.FN)~Salt + Microbes + density + km +
+                                     Microbes:density + Microbes:km +
+                                     density:km +
+                                     Microbes:density:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+X10FN_model_both.temp7 <- MCMCglmm(scale(X10.FN)~Microbes + density + km +
+                                     Microbes:density + Microbes:km +
+                                     density:km +
+                                     Microbes:density:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+#linear model for od600 on day 10, both location descriptors 
+od600_model_both <- MCMCglmm(scale(log(od600))~Salt + Microbes + density + km +
+                               Salt:Microbes + Salt:density + Salt:km +
+                               Microbes:density + Microbes:km +
+                               density:km +
+                               Salt:Microbes:density + Salt:Microbes:km + Salt:density:km +
+                               Microbes:density:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+od600_model_both.temp1 <- MCMCglmm(scale(log(od600))~Salt + Microbes + density + km +
+                               Salt:Microbes + Salt:density + Salt:km +
+                               Microbes:density + Microbes:km +
+                               density:km +
+                               Salt:Microbes:density + Salt:Microbes:km + Salt:density:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+od600_model_both.temp2 <- MCMCglmm(scale(log(od600))~Salt + Microbes + density + km +
+                                     Salt:Microbes + Salt:density + Salt:km +
+                                     Microbes:density + Microbes:km +
+                                     density:km +
+                                     Salt:Microbes:km + Salt:density:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+od600_model_both.temp3 <- MCMCglmm(scale(log(od600))~Salt + Microbes + density + km +
+                                     Salt:Microbes + Salt:density + Salt:km +
+                                     Microbes:density + Microbes:km +
+                                     density:km +
+                                     Salt:density:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+od600_model_both.temp4 <- MCMCglmm(scale(log(od600))~Salt + Microbes + density + km +
+                                     Salt:Microbes + Salt:density + Salt:km +
+                                     Microbes:density + Microbes:km +
+                                     density:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+od600_model_both.temp5 <- MCMCglmm(scale(log(od600))~Salt + Microbes + density + km +
+                                     Salt:Microbes + Salt:density + Salt:km +
+                                     Microbes:density + Microbes:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+od600_model_both.temp6 <- MCMCglmm(scale(log(od600))~Salt + Microbes + density + km +
+                                     Salt:Microbes + Salt:density + Salt:km +
+                                     Microbes:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+od600_model_both.temp7 <- MCMCglmm(scale(log(od600))~Salt + Microbes + density + km +
+                                     Salt:Microbes + Salt:density + 
+                                     Microbes:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+od600_model_both.temp8 <- MCMCglmm(scale(log(od600))~Salt + Microbes + density + km +
+                                     Salt:Microbes + 
+                                     Microbes:km, random = ~ Genotype , data=bzs2,verbose=F)
+
+od600_model_both.temp9 <- MCMCglmm(scale(log(od600))~Salt + Microbes + density + km +
+                                     Salt:Microbes, random = ~ Genotype , data=bzs2,verbose=F)
+
+od600_model_both.temp10 <- MCMCglmm(scale(log(od600))~Salt + Microbes + density + km, random = ~ Genotype , data=bzs2,verbose=F)
+
+od600_model_both.temp11 <- MCMCglmm(scale(log(od600))~Salt + Microbes + km, random = ~ Genotype , data=bzs2,verbose=F)
+
+od600_model_both.temp12 <- MCMCglmm(scale(log(od600))~Salt + Microbes, random = ~ Genotype , data=bzs2,verbose=F)
+
+od600_model_both.temp13 <- MCMCglmm(scale(log(od600))~Salt, random = ~ Genotype , data=bzs2,verbose=F)
+
+#linear model for od600 on day 10, restricting to inoculated wells, both location descriptors
+od600i_model_both <- MCMCglmm(scale(log(od600))~Salt + density + km +
+                                Salt:density + Salt:km +
+                                density:km +
+                                Salt:density:km, random = ~ Genotype , data=bzs2[bzs2$Microbes == 'Yes',],verbose=F)
+
+od600i_model_both.temp1 <- MCMCglmm(scale(log(od600))~Salt + density + km +
+                                Salt:density + Salt:km +
+                                density:km, random = ~ Genotype , data=bzs2[bzs2$Microbes == 'Yes',],verbose=F)
+
+od600i_model_both.temp2 <- MCMCglmm(scale(log(od600))~Salt + density + km +
+                                      Salt:density + 
+                                      density:km, random = ~ Genotype , data=bzs2[bzs2$Microbes == 'Yes',],verbose=F)
+
+od600i_model_both.temp3 <- MCMCglmm(scale(log(od600))~Salt + density + km +
+                                      Salt:density, random = ~ Genotype , data=bzs2[bzs2$Microbes == 'Yes',],verbose=F)
+
+od600i_model_both.temp4 <- MCMCglmm(scale(log(od600))~Salt + density + km, random = ~ Genotype , data=bzs2[bzs2$Microbes == 'Yes',],verbose=F)
+
+od600i_model_both.temp5 <- MCMCglmm(scale(log(od600))~Salt + km, random = ~ Genotype , data=bzs2[bzs2$Microbes == 'Yes',],verbose=F)
+
+od600i_model_both.temp6 <- MCMCglmm(scale(log(od600))~Salt, random = ~ Genotype , data=bzs2[bzs2$Microbes == 'Yes',],verbose=F)
