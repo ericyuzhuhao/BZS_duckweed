@@ -1051,3 +1051,144 @@ od600i_model_both.temp4 <- MCMCglmm(scale(log(od600))~Salt + density + km, rando
 od600i_model_both.temp5 <- MCMCglmm(scale(log(od600))~Salt + km, random = ~ Genotype , data=bzs2[bzs2$Microbes == 'Yes',],verbose=F)
 
 od600i_model_both.temp6 <- MCMCglmm(scale(log(od600))~Salt, random = ~ Genotype , data=bzs2[bzs2$Microbes == 'Yes',],verbose=F)
+
+#linear model for percent decrease in benzotriazole concentration, without location variable
+bzs_model_noloc <- MCMCglmm(scale(BZT_percent_d)~Salt + Microbes + Salt:Microbes, random = ~ Genotype , data=bzs2,verbose=F)
+
+bzs_model_noloc.temp1 <- MCMCglmm(scale(BZT_percent_d)~Salt + Microbes, random = ~ Genotype , data=bzs2,verbose=F)
+
+bzs_model_noloc.temp2 <- MCMCglmm(scale(BZT_percent_d)~Salt, random = ~ Genotype , data=bzs2,verbose=F)
+
+#significance of random effects, bzs model without location variable
+bzs_model_DIC <- 0
+bzs_model_norand_DIC <- 0
+for(i in 1:10) {
+  bzs_model_DIC[i] <- MCMCglmm(scale(BZT_percent_d)~Salt, random = ~ Genotype , data=bzs2,verbose=F)$DIC
+  bzs_model_norand_DIC[i] <- MCMCglmm(scale(BZT_percent_d)~Salt, data=bzs2,verbose=F)$DIC
+}
+
+#linear model for amount of glycoslyated bzt, without location variable
+glycosylatedBZT_model_noloc <- MCMCglmm(scale(glycosylatedBZT)~Salt + Microbes + Salt:Microbes, random = ~ Genotype , data=bzs2,verbose=F)
+
+glycosylatedBZT_model_noloc.temp1 <- MCMCglmm(scale(glycosylatedBZT)~Salt + Microbes, random = ~ Genotype , data=bzs2,verbose=F)
+
+glycosylatedBZT_model_noloc.temp2 <- MCMCglmm(scale(glycosylatedBZT)~Salt, random = ~ Genotype , data=bzs2,verbose=F)
+
+#significance of random effects, glycosylatedBZT model without location variable
+glycosylatedBZT_model_DIC <- 0
+glycosylatedBZT_model_norand_DIC <- 0
+for(i in 1:10) {
+  glycosylatedBZT_model_DIC[i] <- MCMCglmm(scale(glycosylatedBZT)~Salt, random = ~ Genotype , data=bzs2,verbose=F)$DIC
+  glycosylatedBZT_model_norand_DIC[i] <- MCMCglmm(scale(glycosylatedBZT)~Salt, data=bzs2,verbose=F)$DIC
+}
+
+#linear model for amount of BZTalanine, without location variable
+BZTalanine_model_noloc <- MCMCglmm(scale(BZTalanine)~Salt + Microbes + Salt:Microbes, random = ~ Genotype , data=bzs2,verbose=F)
+
+BZTalanine_model_noloc.temp1 <- MCMCglmm(scale(BZTalanine)~Salt + Microbes, random = ~ Genotype , data=bzs2,verbose=F)
+
+BZTalanine_model_noloc.temp2 <- MCMCglmm(scale(BZTalanine)~Microbes, random = ~ Genotype , data=bzs2,verbose=F)
+
+#significance of random effects, bzs model without location variable
+BZTalanine_model_DIC <- 0
+BZTalanine_model_norand_DIC <- 0
+for(i in 1:10) {
+  BZTalanine_model_DIC[i] <- MCMCglmm(scale(BZTalanine)~Microbes, random = ~ Genotype , data=bzs2,verbose=F)$DIC
+  BZTalanine_model_norand_DIC[i] <- MCMCglmm(scale(BZTalanine)~Microbes, data=bzs2,verbose=F)$DIC
+}
+
+#linear model for amount of BZTacetylalanine, without location variable
+BZTacetylalanine_model_noloc <- MCMCglmm(scale(BZTacetylalanine)~Salt + Microbes + Salt:Microbes, random = ~ Genotype , data=bzs2,verbose=F)
+
+BZTacetylalanine_model_noloc.temp1 <- MCMCglmm(scale(BZTacetylalanine)~Salt + Microbes, random = ~ Genotype , data=bzs2,verbose=F)
+
+BZTacetylalanine_model_noloc.temp2 <- MCMCglmm(scale(BZTacetylalanine)~Microbes, random = ~ Genotype , data=bzs2,verbose=F)
+
+#significance of random effects, BZTacetylalanine model without location variable
+BZTacetylalanine_model_DIC <- 0
+BZTacetylalanine_model_norand_DIC <- 0
+for(i in 1:10) {
+  BZTacetylalanine_model_DIC[i] <- MCMCglmm(scale(BZTacetylalanine)~Microbes, random = ~ Genotype , data=bzs2,verbose=F)$DIC
+  BZTacetylalanine_model_norand_DIC[i] <- MCMCglmm(scale(BZTacetylalanine)~Microbes, data=bzs2,verbose=F)$DIC
+}
+
+#linear model for amount of methylBZT, without location variable
+methylBZT_model_noloc <- MCMCglmm(scale(methylBZT)~Salt + Microbes + Salt:Microbes, random = ~ Genotype , data=bzs2,verbose=F)
+
+methylBZT_model_noloc.temp1 <- MCMCglmm(scale(methylBZT)~Salt + Microbes, random = ~ Genotype , data=bzs2,verbose=F)
+
+methylBZT_model_noloc.temp2 <- MCMCglmm(scale(methylBZT)~Microbes, random = ~ Genotype , data=bzs2,verbose=F)
+
+#significance of random effects, methylBZT model without location variable
+methylBZT_model_DIC <- 0
+methylBZT_model_norand_DIC <- 0
+for(i in 1:10) {
+  methylBZT_model_DIC[i] <- MCMCglmm(scale(methylBZT)~Microbes, random = ~ Genotype , data=bzs2,verbose=F)$DIC
+  methylBZT_model_norand_DIC[i] <- MCMCglmm(scale(methylBZT)~Microbes, data=bzs2,verbose=F)$DIC
+}
+
+#linear model for amount of methoxyBZT, without location variable
+methoxyBZT_model_noloc <- MCMCglmm(scale(methoxyBZT)~Salt + Microbes + Salt:Microbes, random = ~ Genotype , data=bzs2,verbose=F)
+
+methoxyBZT_model_noloc.temp1 <- MCMCglmm(scale(methoxyBZT)~Salt + Microbes, random = ~ Genotype , data=bzs2,verbose=F)
+
+methoxyBZT_model_noloc.temp2 <- MCMCglmm(scale(methoxyBZT)~Salt, random = ~ Genotype , data=bzs2,verbose=F)
+
+#significance of random effects, methoxyBZT model without location variable
+methoxyBZT_model_DIC <- 0
+methoxyBZT_model_norand_DIC <- 0
+for(i in 1:10) {
+  methoxyBZT_model_DIC[i] <- MCMCglmm(scale(methoxyBZT)~Salt, random = ~ Genotype , data=bzs2,verbose=F)$DIC
+  methoxyBZT_model_norand_DIC[i] <- MCMCglmm(scale(methoxyBZT)~Salt, data=bzs2,verbose=F)$DIC
+}
+
+#linear model for amount of aniline, without location variable
+aniline_model_noloc <- MCMCglmm(scale(aniline)~Salt + Microbes + Salt:Microbes, random = ~ Genotype , data=bzs2,verbose=F)
+
+aniline_model_noloc.temp1 <- MCMCglmm(scale(aniline)~Salt + Microbes, random = ~ Genotype , data=bzs2,verbose=F)
+
+aniline_model_noloc.temp2 <- MCMCglmm(scale(aniline)~Salt, random = ~ Genotype , data=bzs2,verbose=F)
+
+#significance of random effects, aniline model without location variable
+aniline_model_DIC <- 0
+aniline_model_norand_DIC <- 0
+for(i in 1:10) {
+  aniline_model_DIC[i] <- MCMCglmm(scale(aniline)~Salt, random = ~ Genotype , data=bzs2,verbose=F)$DIC
+  aniline_model_norand_DIC[i] <- MCMCglmm(scale(aniline)~Salt, data=bzs2,verbose=F)$DIC
+}
+
+#linear model for amount of amino_3_phenol, without location variable
+amino_3_phenol_model_noloc <- MCMCglmm(scale(amino_3_phenol)~Salt + Microbes + Salt:Microbes, random = ~ Genotype , data=bzs2,verbose=F)
+
+amino_3_phenol_model_noloc.temp1 <- MCMCglmm(scale(amino_3_phenol)~Salt + Microbes, random = ~ Genotype , data=bzs2,verbose=F)
+
+amino_3_phenol_model_noloc.temp2 <- MCMCglmm(scale(amino_3_phenol)~Salt, random = ~ Genotype , data=bzs2,verbose=F)
+
+#significance of random effects, amino_3_phenol model without location variable
+amino_3_phenol_model_DIC <- 0
+amino_3_phenol_model_norand_DIC <- 0
+for(i in 1:10) {
+  amino_3_phenol_model_DIC[i] <- MCMCglmm(scale(amino_3_phenol)~Salt, random = ~ Genotype , data=bzs2,verbose=F)$DIC
+  amino_3_phenol_model_norand_DIC[i] <- MCMCglmm(scale(amino_3_phenol)~Salt, data=bzs2,verbose=F)$DIC
+}
+
+
+#linear model for amount of phenazine, without location variable
+phenazine_model_noloc <- MCMCglmm(scale(phenazine)~Salt + Microbes + Salt:Microbes, random = ~ Genotype , data=bzs2,verbose=F)
+
+phenazine_model_noloc.temp1 <- MCMCglmm(scale(phenazine)~Salt + Microbes, random = ~ Genotype , data=bzs2,verbose=F)
+
+phenazine_model_noloc.temp2 <- MCMCglmm(scale(phenazine)~Salt, random = ~ Genotype , data=bzs2,verbose=F)
+
+#significance of random effects, phenazine model without location variable
+phenazine_model_DIC <- 0
+phenazine_model_norand_DIC <- 0
+for(i in 1:10) {
+  phenazine_model_DIC[i] <- MCMCglmm(scale(phenazine)~Salt, random = ~ Genotype , data=bzs2,verbose=F)$DIC
+  phenazine_model_norand_DIC[i] <- MCMCglmm(scale(phenazine)~Salt, data=bzs2,verbose=F)$DIC
+}
+
+#MANOVA
+#library(rstatix)
+res.man <- manova(cbind(BZT_percent_d, BZTalanine, BZTacetylalanine, 
+                        glycosylatedBZT, amino_3_phenol, methoxyBZT, methylBZT, aniline, phenazine) ~ Salt*Microbes, data = bzs2)
